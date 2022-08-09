@@ -6,7 +6,7 @@ export class AssuntoController {
         const { name } = req.body
 
         if (!name) {
-            return res.status(400).json({ message: ' Nome é obrigatório' })
+            return res.status(400).json({ message: 'Name is required' })
         }
 
         try {
