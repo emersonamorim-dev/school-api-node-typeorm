@@ -5,7 +5,7 @@ export class default1857086496127 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`CREATE TABLE "assuntos" ("id" SERIAL NOT NULL, "name" text NOT NULL, CONSTRAINT "PK_1a023685ac2b051b4e557b0b280" PRIMARY KEY ("id"))`);
-        await queryRunner.query(`CREATE TABLE "aula_assunto" ("room_id" integer NOT NULL, "assunto_id" integer NOT NULL, CONSTRAINT "PK_6b3738a7b93c77fd6d9333b638a" PRIMARY KEY ("aula_id", "assunto_id"))`);
+        await queryRunner.query(`CREATE TABLE "aula_assunto" ("aula_id" integer NOT NULL, "assunto_id" integer NOT NULL, CONSTRAINT "PK_6b3738a7b93c77fd6d9333b638a" PRIMARY KEY ("aula_id", "assunto_id"))`);
         await queryRunner.query(`CREATE INDEX "IDX_f227421d2ef64ab086261ac07f" ON "aula_assunto" ("aula_id") `);
         await queryRunner.query(`CREATE INDEX "IDX_a05f10c497f5f7db3022664a6d" ON "aula_assunto" ("assunto_id") `);
         await queryRunner.query(`ALTER TABLE "aulas" ADD "description" text`);
